@@ -1,30 +1,26 @@
-import { createBrowserRouter } from "react-router-dom";
-import { ExpenseIncomeTable } from "../Pages/Table";
-import App from "../App";
+import { useRoutes } from "react-router-dom";
+import { ExpenseIncomeTable } from "../Pages/Table/index.table";
+import Home from "../Pages/Home/Home";
+import Charts from "../Pages/Charts/Charts";
 
-import data from "../../database/pfm_db.json";
+export function MainRouter() {
+   const routes = useRoutes([
+      {
+         path: "/",
+         element: <Home />,
+      },
+      {
+         path: "/table",
+         element: <ExpenseIncomeTable />,
+         errorElement: <h1>Oh no error</h1>,
+         children: [],
+      },
+      {
+         path: "/charts",
+         element: <Charts />,
+         errorElement: <h1>Oh no error</h1>,
+      },
+   ]);
 
-function loader() {
-   return data as any;
+   return routes;
 }
-
-export const router = createBrowserRouter([
-   {
-      path: "/",
-      element: <App />,
-      children: [
-         {
-            path: "table",
-            loader,
-            element: <ExpenseIncomeTable />,
-            errorElement: <h1>Oh no error</h1>,
-         },
-         {
-            path: "charts",
-            loader,
-            element: <h1>Hello World</h1>,
-            errorElement: <h1>Oh no error</h1>,
-         },
-      ],
-   },
-]);

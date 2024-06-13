@@ -1,50 +1,35 @@
-import { Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
-import React from "react";
-import { useLoaderData } from "react-router-dom";
-import { Header, Table } from "./index";
-
-function TabBar({ list }: { list: { name: string; children: React.ReactElement }[] }) {
-   return (
-      <Tabs position="relative" variant="unstyled">
-         <TabList className="ml-5 w-fit">
-            {list.map(({ name }) => (
-               <React.Fragment key={name}>
-                  <Tab>{name}</Tab>
-               </React.Fragment>
-            ))}
-         </TabList>
-         <TabIndicator height="5px" className="bg-text-main" />
-         <TabPanels className="p-0 w-full">
-            {list.map(({ children, name }) => (
-               <React.Fragment key={name}>
-                  <TabPanel className="p-0 w-full">{children}</TabPanel>
-               </React.Fragment>
-            ))}
-         </TabPanels>
-      </Tabs>
-   );
-}
+import { Header, Table, Loading, ErrorMessage, TabBar } from "./index.table";
+import { useGetExpenseTransactionsQuery } from "../../api/slice/apiSlice";
 
 function ExpenseIncomeTable() {
-   const data = useLoaderData() as any;
+   const { data, isLoading, isError } = useGetExpenseTransactionsQuery("walletApi");
 
    const list = [
       {
          name: "All",
-         children: <Table data={data.income} />,
+         children: <Table data={data} />,
       },
       {
          name: "Expense",
-         children: <Table data={data.expense} />,
+         children: <Table data={data} />,
       },
       {
          name: "Income",
-         children: <Table data={data.income} />,
+         children: <Table data={data} />,
       },
    ];
 
+   if (isError) {
+      return <ErrorMessage />;
+   }
+
+   if (isLoading) {
+      return <Loading />;
+   }
+
    return (
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden max-w-6xl mx-auto pt-10">
+         
          <Header />
          <TabBar list={list} />
       </div>

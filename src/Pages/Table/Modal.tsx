@@ -2,7 +2,7 @@ import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,
 
 export function DetailModal({ isOpen, onClose, id }: any) {
    return (
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered size="xl">
          <ModalOverlay />
          <ModalContent>
             <ModalHeader>Modal Title</ModalHeader>
