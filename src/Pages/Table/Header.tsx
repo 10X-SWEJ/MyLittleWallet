@@ -1,10 +1,14 @@
-import { Switch } from "@chakra-ui/react";
+import { Switch, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils/currencyConvert";
 import { BalanceIcon, ExpenseIcon, IncomeIcon } from "../../assets/index.icon";
+import OptionModal from "./OptionModal";
+import { IconButton } from "@chakra-ui/react";
+import { CalendarIcon } from "../../assets/index.icon";
 
 function Header() {
    const [darkMode, setDarkMode] = useState<boolean | null>(null);
+   const { isOpen, onClose, onOpen } = useDisclosure();
    useEffect(() => {
       const element = document.getElementById("theme-switch");
       if (element && darkMode !== null) {
@@ -15,21 +19,20 @@ function Header() {
          }
       }
    }, [darkMode]);
-   
+
    return (
       <header className="py-10 space-y-20">
          <div className="w-full h-full flex items-center justify-between">
             <div>
-               <h1 className="text-4xl font-bold text-text-main">
-                  Good Evening
-                  <span>
-                     <input
-                        type="text"
-                        defaultValue={"user"}
-                        className="ml-[10px] h-full bg-transparent border-none outline-none w-fit cursor-pointer"
-                     />
-                  </span>
-               </h1>
+               <div className="text-xl w-full inline-flex items-center">
+                  <div title="change">
+                     Showing data for
+                     <span className="text-blue-500 mx-1">2024</span>
+                  </div>
+                  <IconButton aria-label="menu" icon={<CalendarIcon />} onClick={onOpen} colorScheme="black" />
+                  <OptionModal onClose={onClose} isOpen={isOpen} />
+               </div>
+               <div className="text-sm font-bold text-text-stone-400">You're now viewing yearly transactions</div>
             </div>
             <div>
                <Switch onChange={() => setDarkMode(darkMode === null ? true : !darkMode)} />

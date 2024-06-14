@@ -1,16 +1,13 @@
-import { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import { TData } from "../../types/types";
-import { DetailModal } from "./Modal";
 import { formatCurrency } from "../../utils/currencyConvert";
+import DetailDrawer from "./DetailDrawer";
 
 function Table({ data }: { data: TData[] | [] }) {
-   const { isOpen, onOpen, onClose } = useDisclosure();
-   const [id, SetId] = useState<null | number>(null);
-
+   const { isOpen, onClose, onOpen } = useDisclosure();
    return (
       <>
-         <DetailModal isOpen={isOpen} onClose={onClose} id={id} />
+         <DetailDrawer isOpen={isOpen} onClose={onClose} />
          <table className="w-full mx-auto px-[15px] py-[11px] bg-main rounded-[6px] shadow-lg drop-shadow-lg">
             <thead className="h-[56px]">
                <tr className="text-left ">
@@ -24,14 +21,7 @@ function Table({ data }: { data: TData[] | [] }) {
             </thead>
             <tbody className="text-left [&>*:nth-child(odd)]:bg-secondary overflow-x-scroll">
                {data.map(({ id, category, image, date, archive, title, amount }: TData) => (
-                  <tr
-                     key={id}
-                     className="h-[56px] border-y border-gray-700/50 font-thin text-text-main"
-                     onClick={() => {
-                        onOpen();
-                        SetId(id);
-                     }}
-                  >
+                  <tr onClick={onOpen} key={id} className="h-[56px] border-y border-gray-700/50 font-thin text-text-main">
                      <td className="nth px-[15px] cursor-pointer hover:text-text-hover">{title}</td>
                      <td className="nth px-[15px] cursor-pointer hover:text-text-hover">
                         <img src={image} alt="image" className="w-5 h-5 object-cover rounded-[20px]" />
