@@ -28,7 +28,7 @@ export default function Income({ stroke }: { stroke: string }) {
             strokeLinejoin="round"
          />
          <path d="M6.48975 17.98H3.50977" stroke={stroke} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-         <path d="M5 16.52V19.51" stroke={stroke} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+         <path d="M5 16.52V19.51" stroke={stroke} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
          <path
             d="M2 15.3V9C2 5.5 4 4 7 4H17C20 4 22 5.5 22 9V15C22 18.5 20 20 17 20H8.5"
             stroke={stroke}

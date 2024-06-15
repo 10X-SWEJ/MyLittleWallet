@@ -27,7 +27,7 @@ export default function BalanceIcon({ stroke }: { stroke: string }) {
             strokeLinecap="round"
             strokeLinejoin="round"
          />
-         <path d="M3.43945 18L4.42944 18.99L6.55945 17.02" stroke={stroke} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+         <path d="M3.43945 18L4.42944 18.99L6.55945 17.02" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
          <path
             d="M2 15.3V9C2 5.5 4 4 7 4H17C20 4 22 5.5 22 9V15C22 18.5 20 20 17 20H8.5"
             stroke={stroke}

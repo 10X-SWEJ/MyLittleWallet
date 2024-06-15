@@ -1,13 +1,12 @@
-import { useDisclosure } from "@chakra-ui/react";
+import { Fragment } from "react/jsx-runtime";
 import { TData } from "../../types/types";
 import { formatCurrency } from "../../utils/currencyConvert";
-import DetailDrawer from "./DetailDrawer";
-
+import { useNavigate } from "react-router-dom";
 function Table({ data }: { data: TData[] | [] }) {
-   const { isOpen, onClose, onOpen } = useDisclosure();
+   const navigate = useNavigate();
+
    return (
       <>
-         <DetailDrawer isOpen={isOpen} onClose={onClose} />
          <table className="w-full mx-auto px-[15px] py-[11px] bg-main rounded-[6px] shadow-lg drop-shadow-lg">
             <thead className="h-[56px]">
                <tr className="text-left ">
@@ -21,7 +20,7 @@ function Table({ data }: { data: TData[] | [] }) {
             </thead>
             <tbody className="text-left [&>*:nth-child(odd)]:bg-secondary overflow-x-scroll">
                {data.map(({ id, category, image, date, archive, title, amount }: TData) => (
-                  <tr onClick={onOpen} key={id} className="h-[56px] border-y border-gray-700/50 font-thin text-text-main">
+                  <tr onClick={() => navigate("/table/1")} key={id} className="h-[56px] border-y border-gray-700/50 font-thin text-text-main">
                      <td className="nth px-[15px] cursor-pointer hover:text-text-hover">{title}</td>
                      <td className="nth px-[15px] cursor-pointer hover:text-text-hover">
                         <img src={image} alt="image" className="w-5 h-5 object-cover rounded-[20px]" />
@@ -47,7 +46,11 @@ function Table({ data }: { data: TData[] | [] }) {
                         <div className="w-full flex items-center justify-center gap-5">
                            {[...new Array(5).keys()].map((k) => {
                               k = k + 1;
-                              return <div>{k}</div>;
+                              return (
+                                 <Fragment key={k}>
+                                    <div>{k}</div>
+                                 </Fragment>
+                              );
                            })}
                         </div>
                         <button>next</button>

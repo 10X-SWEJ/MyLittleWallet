@@ -1,5 +1,6 @@
-import { Header, Table, Loading, ErrorMessage, TabBar } from "./index.table";
+import { Header, Table, Loading, ErrorMessage, TabBar, Sidebar } from "./index.table";
 import { useGetExpenseTransactionsQuery } from "../../api/slice/apiSlice";
+import { useState } from "react";
 
 function ExpenseIncomeTable() {
    const { data, isLoading, isError } = useGetExpenseTransactionsQuery("walletApi");
@@ -28,8 +29,7 @@ function ExpenseIncomeTable() {
    }
 
    return (
-      <div className="overflow-x-hidden max-w-6xl mx-auto pt-10">
-         
+      <div>
          <Header />
          <TabBar list={list} />
       </div>
