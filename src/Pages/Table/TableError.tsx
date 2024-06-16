@@ -1,4 +1,4 @@
-function ErrorMessage({ message }: { message?: string }) {
+function TableError({ message }: { message?: string }) {
    return (
       <div className="w-full h-full absolute inset-1 flex items-center justify-center max-w-6xl mx-auto">
          <h1 className="text-red-500 font-bold">An Error Occurred {message} </h1>
@@ -7,4 +7,4 @@ function ErrorMessage({ message }: { message?: string }) {
    );
 }
 
-export default ErrorMessage;
+export default TableError;

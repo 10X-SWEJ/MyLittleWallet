@@ -1,9 +1,8 @@
-import Header from "./Header";
-import Table from "./Table";
-import ErrorMessage from "./Error";
-import ExpenseIncomeTable from "./ExpenseIncome";
-import Loading from "./Loading";
-import TabBar from "./Tab";
-export { default as OptionModal } from "./OptionModal";
-export {default as Sidebar } from "../Layout/Sidebar"
-export { Header, Table, ErrorMessage, ExpenseIncomeTable, Loading, TabBar , };
+export { default as AllTable } from "./AllTable";
+export { default as BaseTable } from "./BaseTable";
+export { default as ExpenseTable } from "./ExpenseTable";
+export { default as Header } from "./Header";
+export { default as IncomeTable } from "./IncomeTable";
+export { default as TableError } from "./TableError";
+export { default as TableLoading } from "./TableLoading";
+export { default as ExpenseIncomeTable } from "./ExpenseIncome.index";

@@ -2,12 +2,10 @@ export default function SidebarOpenIcon() {
    return (
       <svg
          xmlns="http://www.w3.org/2000/svg"
-         width="42"
-         height="42"
+         width="40px"
+         height="40px"
          viewBox="0 0 24 24"
-         fill="none"
-         stroke="#27ff00"
-         strokeWidth="2"
+         strokeWidth="1"
          strokeLinecap="round"
          strokeLinejoin="round"
       >

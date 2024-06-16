@@ -23,12 +23,14 @@ function SideBar({ sidebarClose, setSidebarClose }: { sidebarClose: boolean; set
          </div>
          <button
             title="sidebar button"
-            className="z-[1000px] absolute top-[50%] right-0 translate-x-[26px] -translate-y-1/2"
+            className={`transition-all delay-300 duration-150 z-[1000px] absolute top-[50%] right-0 ${
+               sidebarClose ? "translate-x-[30px]" : "translate-x-[21px]"
+            }  -translate-y-1/2`}
             onClick={() => {
                setSidebarClose(!sidebarClose);
             }}
          >
-            <SidebarOpenIcon/>
+            <SidebarOpenIcon />
          </button>
       </aside>
    );
