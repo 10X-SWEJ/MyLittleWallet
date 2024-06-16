@@ -1,0 +1,28 @@
+# Filter by Date
+
+### Yearly
+
+User can set the Year range, And will display only the year user first signed up.
+
+| Year | Total Income | Total Expense | Some Math that I Don't know           |
+| ---- | ------------ | ------------- | ------------------------------------- |
+| 2020 | +243.434     | -343432       | Alcohol 20% Gaming 40% Girlfriend     |
+| 2021 | +243.434     | -435345       | Education 50% Gaming 10% Food 20%     |
+| 2022 | +243.434     | -435345       | Food 50% School 10% Subscriptions 50% |
+
+### Monthly
+
+When user chooses `monthly` option in the modal. must specify which `year` user wants to see. There will be no pagination. Only 12 months of the user's specified year will display.
+
+Schema
+
+`Showing for 2020`
+
+| Month    | Total Income | Total Expense | Percentage used by Tags               |
+| -------- | ------------ | ------------- | ------------------------------------- |
+| January  | +243.434     | -343432       | Alcohol 20% Gaming 40% Girlfriend 10% |
+| February | +243.434     | -435345       | Gaming 20% Food 40% Girlfriend 10%    |
+
+### Daily
+
+Current Schema
