@@ -5,7 +5,8 @@ import { ExpenseIncomeTable } from "./Pages/Table/index.table";
 import { WishList } from "./Pages/Wishlist/index.wishList";
 import { Member } from "./Pages/Members/index.member";
 import { Profile } from "./Pages/Profile/index.profile";
-import { Automation } from "./Pages/Automations/index.automation";
+import { Automation } from "./Pages/Automation/index.automation";
+import { Setting } from "./Pages/Setting/index.setting";
 import Detail from "./Pages/Table/Detail/Detail";
 
 function Error({ message }: { message?: string }) {
@@ -53,6 +54,11 @@ function App() {
             {
                path: "automation",
                element: <Automation />,
+               errorElement: <Error />,
+            },
+            {
+               path: "setting",
+               element: <Setting />,
                errorElement: <Error />,
             },
          ],

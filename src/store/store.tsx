@@ -1,10 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { walletApi } from "../api/slice/apiSlice";
+import { combineReducers } from "@reduxjs/toolkit";
+import { walletApi } from "../api/apiSlice/apiSlice";
+import userSettingReducer from "./useSettingSlice";
+
+const rootReducers = combineReducers({
+   userSetting: userSettingReducer,
+   [walletApi.reducerPath]: walletApi.reducer,
+});
 
 export const store = configureStore({
-   reducer: {
-      [walletApi.reducerPath]: walletApi.reducer,
-   },
+   reducer: rootReducers,
    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(walletApi.middleware),
 });
 

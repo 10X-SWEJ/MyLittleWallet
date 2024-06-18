@@ -1,5 +1,5 @@
 import BaseTable from "./BaseTable";
-import { useGetAllTransactionsQuery } from "../../api/slice/apiSlice";
+import { useGetAllTransactionsQuery } from "../../api/apiSlice/apiSlice";
 import { TableLoading } from "./index.table";
 
 export default function ExpenseTable() {

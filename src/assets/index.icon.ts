@@ -12,3 +12,4 @@ export { default as MemberIcon } from "./Members.icon";
 export { default as WishlistIcon } from "./WishList.icon";
 export { default as SidebarOpenIcon } from "./SidebarOpen.icon";
 export { default as BackIcon } from "./Back.icon";
+export { default as SettingIcon } from "./Setting.icon";

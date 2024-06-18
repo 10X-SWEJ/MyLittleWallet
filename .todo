@@ -1,3 +1,8 @@
+# Header Cards
+
+Make Accordion cards - Click to expand and detail stats and click again to return normal.
+Can also hide.
+
 # Filter by Date
 
 ### Yearly
@@ -26,3 +31,5 @@ Schema
 ### Daily
 
 Current Schema
+
+# User Setting with local storage using redux subscriber

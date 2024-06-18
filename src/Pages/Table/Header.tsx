@@ -21,7 +21,7 @@ function Header() {
    }, [darkMode]);
 
    return (
-      <header className="py-10 space-y-20">
+      <header className="py-20 space-y-20">
          <div className="w-full h-full flex items-center justify-between">
             <div>
                <div className="text-xl w-full inline-flex items-center">
@@ -38,28 +38,43 @@ function Header() {
                <Switch onChange={() => setDarkMode(darkMode === null ? true : !darkMode)} />
             </div>
          </div>
-         <div className="grid grid-cols-3 gap-5">
-            <div className="rounded-[20px] bg-gradient-to-r from-[#bd6532] to-[#f24a2c]  min-w-[100px] h-[200px] flex items-center justify-center gap-5 relative">
-               <ExpenseIcon stroke="#eb8574" />
-               <div className="flex flex-col items-start text-white">
-                  <strong className="text-3xl font-bold">Expense</strong>
-                  <strong>{formatCurrency(100000)}</strong>
+         <div className="group flex items-center w-full h-full gap-5">
+            <article
+               title="expense"
+               className="rounded-[20px] group/article relative w-full overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-[#f24a2c] after:backdrop-blur after:transition-all after:rounded-[20px] focus-within:ring focus-within:ring-indigo-300"
+            >
+               <div className="py-10 bg-gradient-to-r from-[#bd6532] to-[#f24a2c] flex items-center justify-center gap-5 relative">
+                  <ExpenseIcon stroke="#eb8574" />
+                  <div className="flex flex-col items-start text-white">
+                     <strong className="text-3xl font-bold">Expense</strong>
+                     <strong>{formatCurrency(100000)}</strong>
+                  </div>
                </div>
-            </div>
-            <div className="rounded-[20px] bg-gradient-to-r from-[#45af30] to-[#43f22c]  min-w-[100px] h-[200px] flex items-center justify-center gap-5 relative">
-               <IncomeIcon stroke="#75f065" />
-               <div className="flex flex-col items-start text-white">
-                  <strong className="text-3xl font-bold">Income</strong>
-                  <strong>{formatCurrency(150000)}</strong>
+            </article>
+            <article
+               title="income"
+               className="rounded-[20px] group/article relative w-full overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-[#43f22c] after:backdrop-blur after:transition-all after:rounded-[20px] focus-within:ring focus-within:ring-indigo-300"
+            >
+               <div className="py-10 rounded-[20px] bg-gradient-to-r from-[#45af30] to-[#43f22c]  flex items-center justify-center gap-5 relative">
+                  <IncomeIcon stroke="#75f065" />
+                  <div className="flex flex-col items-start text-white">
+                     <strong className="text-3xl font-bold">Income</strong>
+                     <strong>{formatCurrency(150000)}</strong>
+                  </div>
                </div>
-            </div>
-            <div className="rounded-[20px] bg-gradient-to-r from-[#3032af] to-[#4a2cf2]  min-w-[100px] h-[200px] flex items-center justify-center gap-5 relative">
-               <BalanceIcon stroke="#614ae2" />
-               <div className="flex flex-col items-start text-white">
-                  <strong className="text-3xl font-bold">Balance</strong>
-                  <strong>{formatCurrency(500000)}</strong>
+            </article>
+            <article
+               title="balance"
+               className="rounded-[20px] group/article relative w-full overflow-hidden md:group-hover:[&:not(:hover)]:w-[20%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-[#4a2cf2] after:backdrop-blur after:transition-all after:rounded-[20px] focus-within:ring focus-within:ring-indigo-300"
+            >
+               <div className="py-10 rounded-[20px] bg-gradient-to-r from-[#3032af] to-[#4a2cf2]  flex items-center justify-center gap-5 relative">
+                  <BalanceIcon stroke="#614ae2" />
+                  <div className="flex flex-col items-start text-white">
+                     <strong className="text-3xl font-bold">Balance</strong>
+                     <strong>{formatCurrency(500000)}</strong>
+                  </div>
                </div>
-            </div>
+            </article>
          </div>
       </header>
    );

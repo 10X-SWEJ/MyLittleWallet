@@ -1,5 +1,7 @@
-import { Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
+
+// components
+import { Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { AllTable, ExpenseTable, Header, IncomeTable } from "./index.table";
 
 function ExpenseIncomeTable() {
