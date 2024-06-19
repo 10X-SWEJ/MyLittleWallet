@@ -2,7 +2,7 @@ import { Switch, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils/currencyConvert";
 import { BalanceIcon, ExpenseIcon, IncomeIcon } from "../../assets/index.icon";
-import OptionModal from "../Layout/OptionModal";
+import OptionModal from "./OptionModal";
 import { IconButton } from "@chakra-ui/react";
 import { CalendarIcon } from "../../assets/index.icon";
 

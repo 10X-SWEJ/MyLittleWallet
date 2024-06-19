@@ -1,6 +1,6 @@
 import BaseTable from "./BaseTable";
 import { useGetAllTransactionsQuery } from "../../api/apiSlice/apiSlice";
-import { TableLoading } from "./index.table";
+import { TableLoading, TableError } from "./index.table";
 
 export default function ExpenseTable() {
    const { data, isLoading, isError } = useGetAllTransactionsQuery("walletApi");
@@ -10,7 +10,7 @@ export default function ExpenseTable() {
    }
 
    if (isError) {
-      return <TableLoading />;
+      return <TableError />;
    }
 
    return <BaseTable data={data} />;

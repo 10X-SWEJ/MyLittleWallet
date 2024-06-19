@@ -6,3 +6,4 @@ export { default as IncomeTable } from "./IncomeTable";
 export { default as TableError } from "./TableError";
 export { default as TableLoading } from "./TableLoading";
 export { default as ExpenseIncomeTable } from "./ExpenseIncome.index";
+export { default as OptionModal } from "./OptionModal"

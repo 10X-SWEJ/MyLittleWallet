@@ -33,3 +33,5 @@ Schema
 Current Schema
 
 # User Setting with local storage using redux subscriber
+
+## User can change Default view - (Yearly, Monthly, Daily)
